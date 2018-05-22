@@ -1,0 +1,94 @@
+elrib@DESKTOP-G5DD3BO MINGW64 ~
+$ cd g:repos
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos
+$ git clone https://github.com/DenisBelov/file-spliter.git
+Cloning into 'file-spliter'...
+remote: Counting objects: 34, done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 34 (delta 5), reused 31 (delta 5), pack-reused 0
+Unpacking objects: 100% (34/34), done.
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos
+$ cd file-spliter
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (master)
+$ git checkout develop
+Branch develop set up to track remote branch develop from origin.
+Switched to a new branch 'develop'
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (develop)
+$ git checkout -b unit-tests
+Switched to a new branch 'unit-tests'
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git checkout develop
+Your branch is up-to-date with 'origin/develop'.
+Switched to branch 'develop'
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (develop)
+$ git pull
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 10 (delta 1), reused 9 (delta 1), pack-reused 0
+Unpacking objects: 100% (10/10), done.
+From https://github.com/DenisBelov/file-spliter
+   b3947b8..dfe8264  develop    -> origin/develop
+   2d4cdd0..1c99075  master     -> origin/master
+Updating b3947b8..dfe8264
+Fast-forward
+ FileSpliter.BLL/FileSerializator.cs        | 48 ++++++++++++++++++++
+ FileSpliter.BLL/FileSpliter.BLL.csproj     | 64 +++++++++++++++++++++++++++
+ FileSpliter.BLL/Properties/AssemblyInfo.cs | 36 +++++++++++++++
+ FileSpliter.BLL/StreamProvider.cs          | 71 ++++++++++++++++++++++++++++++
+ FileSpliter.BLL/packages.config            |  4 ++
+ 5 files changed, 223 insertions(+)
+ create mode 100644 FileSpliter.BLL/FileSerializator.cs
+ create mode 100644 FileSpliter.BLL/FileSpliter.BLL.csproj
+ create mode 100644 FileSpliter.BLL/Properties/AssemblyInfo.cs
+ create mode 100644 FileSpliter.BLL/StreamProvider.cs
+ create mode 100644 FileSpliter.BLL/packages.config
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (develop)
+$ git checkout unit-tests
+Switched to branch 'unit-tests'
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git pull origin develop
+...
+
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git add --all
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git commit -m "add unit-test project and fix private classes bug in bll project"
+[unit-tests 689cb37] add unit-test project and fix private classes bug in bll project
+ 5 files changed, 29 insertions(+), 3 deletions(-)
+ create mode 100644 FileSpliter.BLL.Tests/FileSpliter.BLL.Tests.csproj
+ create mode 100644 FileSpliter.BLL.Tests/StreamProviderTests.cs
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git add --all
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git commit -m "add stream provider tests"
+[unit-tests d0b9148] add stream provider tests
+ 5 files changed, 228 insertions(+), 14 deletions(-)
+ rewrite FileSpliter.BLL.Tests/FileSpliter.BLL.Tests.csproj (73%)
+ create mode 100644 FileSpliter.BLL.Tests/Properties/AssemblyInfo.cs
+ create mode 100644 FileSpliter.BLL.Tests/packages.config
+
+elrib@DESKTOP-G5DD3BO MINGW64 /g/repos/file-spliter (unit-tests)
+$ git push origin unit-tests
+fatal: AggregateException encountered.
+   One or more errors occurred.
+Username for 'https://github.com': Albarn
+Counting objects: 18, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (18/18), 4.95 KiB | 0 bytes/s, done.
+Total 18 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 5 local objects.
+To https://github.com/DenisBelov/file-spliter.git
+ * [new branch]      unit-tests -> unit-tests
